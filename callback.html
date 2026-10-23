@@ -1,0 +1,10 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connexion TikTok</title></head>
+<body style="font-family:sans-serif;max-width:640px;margin:2em auto;padding:0 16px">
+<h1>Connexion TikTok</h1>
+<p id="msg">Autorisation reçue. Copie l'adresse complète de cette page et colle-la dans le fichier demandé par Claude (pas dans le chat).</p>
+<script>
+var p = new URLSearchParams(location.search);
+if (p.get("error")) document.getElementById("msg").textContent = "Erreur : " + p.get("error") + " " + (p.get("error_description") || "");
+else if (!p.get("code")) document.getElementById("msg").textContent = "Aucun code reçu.";
+</script>
+</body></html>
